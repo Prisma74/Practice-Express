@@ -2,17 +2,17 @@
 
 function getUsers() {
   return new Promise((resolve, reject) => {
-    console.log("Getting list of users");
+    console.log("Getting users...");
     setTimeout(() => {
       const success = true;
       if (success) {
         resolve([
-          { id: 1, nombre: "Garcia" },
-          { id: 2, nombre: "Camilo" },
-          { id: 3, nombre: "Andres" },
+          { id: 1, nombre: "Andres" },
+          { id: 2, nombre: "Garcia" },
+          { id: 3, nombre: "Camilo" },
         ]);
       } else {
-        reject("Error getting list of users :( ...");
+        reject("Error getting users...");
       }
     }, 2000);
   });
@@ -20,23 +20,23 @@ function getUsers() {
 
 function getUserDetails(id) {
   return new Promise((resolve, reject) => {
-    console.log(`Getting user details of ID${id}`);
+    console.log(`Getting details of user with ID ${id}`);
     setTimeout(() => {
       const success = true;
       if (success) {
         resolve({
           id: id,
-          nombre: id === 1 ? "Garcia" : id === 2 ? "Camilo" : "Andres",
-          edad: id === 1 ? 22 : id === 2 ? 25 : 23,
+          nombre: id === 1 ? "Andres" : id === 2 ? "Garcia" : "Camilo",
+          edad: id === 1 ? 23 : id === 2 ? 22 : 25,
           correo:
             id === 1
-              ? "garcia@gmail.com"
+              ? "andres@gmail.com"
               : id === 2
-              ? "camilo@gmail.com"
-              : "andres@gmail.com",
+              ? "garcia@gmail.com"
+              : "camilo@gmail.com",
         });
       }
-    }, 1500);
+    }, 2000);
   });
 }
 
